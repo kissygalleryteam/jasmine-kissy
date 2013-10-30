@@ -1,9 +1,0 @@
-{
-    "framework": "jasmine",
-    "launch_in_dev":["chrome","firefox"],
-    "src_files":[
-          "specs/fixtures/*.html",
-          "util/*.js"
-    ],
-    "test_page": "tests.html"
-}

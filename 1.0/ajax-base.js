@@ -539,7 +539,7 @@ KISSY.add('ajax/base', function (S, JSON, Event, undefined) {
             io.responseText = mockData.responseText;
             io.mimeType = mockData.contentType;
             if (isJsonp) {
-                IO._setJsonpCallback(xhr, mockData);
+                IO._setJsonpCallback(io, mockData);
             }
             //触发ajax对象的回调
             io._ioReady(mockData.status);
@@ -666,7 +666,7 @@ KISSY.add('ajax/base', function (S, JSON, Event, undefined) {
                             }
                         }
                     });
-                    if (!hasData) return io._getResponseUseData(response, '');
+                    if (!hasData) return IO._getResponseUseData(response, '');
                 }
                 return res;
             },
@@ -692,23 +692,29 @@ KISSY.add('ajax/base', function (S, JSON, Event, undefined) {
             },
             /**
              * mock jsonp的回调
-             * @param {Object} xhr xhr对象
+             * @param {Object} io
              * @param {Object} response 结果集
              * @private
              */
-            _setJsonpCallback:function (xhr, response) {
+            _setJsonpCallback:function (io, response) {
                 var callbackName = IO._getJsonpCallbackName(response);
+                var converters = io.converters = io.converters || {};
+                converters.script = converters.script || {};
+                converters.script.json = function(){
+                    return {};
+                }
                 //设置回调函数
                 window[callbackName] = function (r) {
                     // jsonp 返回了数组
                     if (arguments.length > 1) {
                         r = S.makeArray(arguments);
                     }
-                    xhr.responseData = r;
-                    xhr.fire('success');
+                    io.responseData = r;
+                    var defer = io._defer;
+                    defer['resolve']([r, 'success', io]);
                 };
 
-                xhr.jsonpCallback = callbackName;
+                IO.jsonpCallback = callbackName;
             },
             /**
              * 结果集集合

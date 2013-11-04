@@ -1,4 +1,4 @@
-KISSY.add(function(S,Node,io,Velocity){
+KISSY.add(function(S,Node,io,Velocity,Parser){
     var $ = Node.all;
 
     /**
@@ -161,10 +161,6 @@ KISSY.add(function(S,Node,io,Velocity){
 
             tpl = self._require(tpl,data);
             //TODO:这是velocity组件的bug，防止加载不存在的文件
-            var Parser;
-            S.use('gallery/velocity/1.0/parse',function(S,P){
-                Parser = P;
-            });
             var asts = Parser.parse(tpl);
             var compile = new Velocity(asts);
             return compile.render(data);
@@ -231,4 +227,4 @@ KISSY.add(function(S,Node,io,Velocity){
     });
 
     return JamineFixture;
-},{requires:['node','ajax','gallery/velocity/1.1/index']});
+},{requires:['node','ajax','gallery/velocity/1.1/index','gallery/velocity/1.1/parse']});

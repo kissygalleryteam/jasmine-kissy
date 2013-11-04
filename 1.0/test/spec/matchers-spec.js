@@ -1,11 +1,11 @@
-KISSY.add(function (S, Node,HtmlMock) {
+KISSY.add(function (S, Node) {
     var $ = Node.all;
-    var htmlMock = new HtmlMock();
+    var htmlMock = S.htmlMock;
     describe('matchers test', function () {
-        var url1 = './specs/fixtures/jasmine-kissy_fixture.html';
-        htmlMock.load(url1);
         it('toExist',function(){
-              expect('#test').toExist();
+            var url1 = './fixture/jasmine-kissy_fixture.html';
+            htmlMock.load(url1);
+            expect('#test').toExist();
         })
         it('toContain',function(){
             expect('#test').not.toContain();
@@ -33,4 +33,4 @@ KISSY.add(function (S, Node,HtmlMock) {
         })
     });
 
-},{requires:['node','jasmine/htmlMock']});
+},{requires:['node']});

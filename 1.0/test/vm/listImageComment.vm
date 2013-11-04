@@ -1,7 +1,0 @@
-<div class="image-comment">
-    <img class="comment-icon" src="http://img02.taobaocdn.com/tps/i2/T1yhMcXbBdXXb38KzX-15-13.png"/>
-    <div class=" J_ImageCommentContent">
-        <p class="comment-author">$!roleName的留言：</p>
-        <p>$!msg.content</p>
-    </div>
-</div>

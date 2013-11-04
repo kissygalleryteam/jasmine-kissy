@@ -1,0 +1,20 @@
+<div class="scroller">
+    <div class="ks-switchable-content">
+        #foreach($msg in $!currentProofMsg)
+        <div class="list-item J_ListItem">
+            #if($!msg.attachment)
+            #set($newUrl ="$!msg.attachment"+"_120x120.jpg")
+            #set($originalUrl="$!msg.attachment"+".jpg")
+            <img class="J_ImgDD" data-original-url="$refundImageServer.getURI("refund/$originalUrl")" src="$refundImageServer.getURI("refund/$newUrl")"/>
+            #end
+            <div class="image-comment">
+                <img class="comment-icon" src="http://img02.taobaocdn.com/tps/i2/T1yhMcXbBdXXb38KzX-15-13.png"/>
+                <div class=" J_ImageCommentContent">
+                    <p class="comment-author">$!roleName的留言：</p>
+                    <p>$!msg.content</p>
+                </div>
+            </div>
+        </div>
+        #end
+    </div>
+</div>

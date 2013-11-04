@@ -1,0 +1,10 @@
+{
+    "MAP":{
+        "control":"./vm"
+    },
+    "type":1,
+    "currentProofMsg":[
+        {"attachment":"http://img01.taobaocdn.com/imgextra/i1/10361016579368429/T1zbCTXfdmXXXXXXXX_!!413810361-0-tstar","roleName":"您","content":"这是一条留言"},
+        {"attachment":"http://img01.taobaocdn.com/imgextra/i1/10361016579368429/T1zbCTXfdmXXXXXXXX_!!413810361-0-tstar","roleName":"您","content":"这是一条留言"}
+    ]
+}

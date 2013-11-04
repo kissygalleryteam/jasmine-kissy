@@ -1,3 +1,3 @@
 KISSY.add(function(){
 
-},{requires:['spec/html-mock-spec']})
+},{requires:['test/spec/html-mock-spec','test/spec/ajax-mock-spec']})

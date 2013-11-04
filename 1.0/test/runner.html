@@ -6,6 +6,7 @@
         <title>Runner</title>
         <link type="text/css" rel="stylesheet" charset="utf-8" href="http://assets.spmjs.org/totoro/jasmine/1.3.1/jasmine.css" />
         <script src="//g.tbcdn.cn/kissy/k/1.3.1/seed.js"></script>
+        <script src="../ajax-base.js"></script>
         <script src="http://assets.spmjs.org/totoro/jasmine/1.3.1/jasmine.js"></script>
         <script src="http://assets.spmjs.org/totoro/jasmine/1.3.1/jasmine-html.js"></script>
     </head>
@@ -33,12 +34,8 @@
                 S.config({
                     packages:[
                         {
-                            name:"spec",
-                            path:'./'
-                        },
-                        {
-                            name:"runner",
-                            path:'./test',
+                            name:"test",
+                            path:'./',
                             ignorePackageNameInUri:true
                         }
                     ]
@@ -52,7 +49,7 @@
 
                 S.use('gallery/jasmine-kissy/1.0/',function(S,HtmlMock){
                     S.htmlMock = new HtmlMock();
-                    S.use('runner',function(){
+                    S.use('test/runner',function(){
                         jasmineEnv.execute();
                     })
                 })

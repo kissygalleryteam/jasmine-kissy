@@ -1,0 +1,15 @@
+{
+    "name": "jasmine-kissy",
+    "version": "2.0",
+    "desc": "为了方便使用jasmine进行单元测试，而专门增加的针对kissy的扩展，包括html、vm、ajax的mock",
+    "cover": "",
+    "tag":"单元测试",
+    "githubName":"minghe",
+    "author": {
+        "name": "明河",
+        "email": "minghe36@126.com",
+        "page": ""
+    },
+    "type": "kissy-gallery",
+    "type-url": "http://gallery.kissyui.com/guide"
+}

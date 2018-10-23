@@ -4,7 +4,7 @@
 
 2.0版，jasmine-kissy作为kissy组件出现，基于kissy1.3.0+。
 
-jasmine-kissy是为了方便基于kissy的代码进行单元测试，而向[Jasmine](http://pivotal.github.com/jasmine/)添加的扩展。
+jasmine-kissy是为了方便基于kissy的代码进行单元测试，而向[Jasmine](https://jasmine.github.io/)添加的扩展。
 
 jasmine-kissy主要扩展了如下四个功能
 
